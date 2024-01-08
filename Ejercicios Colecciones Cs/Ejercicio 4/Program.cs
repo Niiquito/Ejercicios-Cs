@@ -29,6 +29,35 @@ public class Ejercicio4
         numeros.Sort();
         Console.WriteLine();
         mostrarLista(numeros);
+        Console.ReadKey();
+        Console.Clear();
+        /*
+            Mostrar la lista en consola.
+            Eliminar todos los números que sean divisibles por 3.
+            Añadir un nuevo número al final de la lista.
+            Ordenar la lista de mayor a menor.
+        */
+        mostrarLista(numeros);
+        Console.WriteLine();
+        removerImpares(numeros);
+        mostrarLista(numeros);
+        Console.WriteLine();
+        numeros.Insert(numeros.Count - 1, 5);
+        mostrarLista(numeros);
+        Console.WriteLine();
+        numeros.Sort();
+        numeros.Reverse();
+        mostrarLista(numeros);
+    }
+
+    private static void removerImpares(List<int> numeros)
+    {
+        for (int i = 0; i < numeros.Count; i++)
+            if (numeros[i] % 3 == 0 || numeros[i] == 1)
+            {
+                numeros.RemoveAt(i);
+                i--;
+            }
     }
 
     private static void mostrarLista(List<int> lista)
