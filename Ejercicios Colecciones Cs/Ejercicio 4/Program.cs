@@ -63,20 +63,16 @@ public class Ejercicio4
     private static void mostrarLista(List<int> lista)
     {
         foreach (int item in lista)
-        {
             Console.WriteLine(item);
-        }
     }
 
     private static void removerPares(List<int> numeros)
     {
         for (int i = 0; i < numeros.Count; i++)
-        {
             if (numeros[i] % 2 == 0)
             {
                 numeros.RemoveAt(i);
                 i--;
             }
-        }
     }
 }
