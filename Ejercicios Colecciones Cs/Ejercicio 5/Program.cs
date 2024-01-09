@@ -12,8 +12,8 @@ public class Ejercicio5
     {
         List<string> palabras = new List<string>();
         palabras.Add("Holas");
-        palabras.Add("Petes");
-        palabras.Add("Pito");
+        palabras.Add("Petardo");
+        palabras.Add("Piña");
         string palabra = "";
         foreach (string item in palabras)
         {
