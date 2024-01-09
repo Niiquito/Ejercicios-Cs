@@ -29,6 +29,8 @@ public class Ejercicio5
                 i--;
             }
         }
+        palabras.Add("Cascanueces");
+        palabras.Sort();
         foreach(string item in palabras)
         {
             Console.WriteLine(item);
