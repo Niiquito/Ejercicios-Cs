@@ -27,4 +27,16 @@ public class Ejercicio8
         foreach (int item in numeros)
             Console.WriteLine(item);
     }
+    /*
+     // Eliminar todas las repeticiones de la lista
+    FORMA IA:
+            List<int> numerosSinRepeticiones = new List<int>();
+            for (int i = 0; i < numeros.Count; i++)
+            {
+                if (!numerosSinRepeticiones.Contains(numeros[i]))
+                {
+                    numerosSinRepeticiones.Add(numeros[i]);
+                }
+            }
+     */
 }
