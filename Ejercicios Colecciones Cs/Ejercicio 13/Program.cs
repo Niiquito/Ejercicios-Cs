@@ -12,12 +12,20 @@ public class Ejercicio13
         LinkedList<string> palabras = new LinkedList<string>();
         Queue<string> cola = new Queue<string>();
         bool breaker = true;
-        Console.WriteLine("Ingrese palabras");
-        breaker = ingresarDatos(cola, breaker);
-        Console.WriteLine($"El primer elemento es: {cola.Peek()}, la lista tiene un tamaño de: {cola.Count}");
-        int tamañoCola = cola.Count;
-        eliminarCola(cola, tamañoCola);
-        Console.WriteLine($"\nLa lista luego del Dequeue tiene un tamaño de: {cola.Count}");
+        try
+        {
+            Console.WriteLine("Ingrese palabras");
+            breaker = ingresarDatos(cola, breaker);
+            Console.WriteLine($"El primer elemento es: {cola.Peek()}, la lista tiene un tamaño de: {cola.Count - 1}");
+            int tamañoCola = cola.Count;
+            eliminarCola(cola, tamañoCola);
+            Console.WriteLine($"\nLa lista luego del Dequeue tiene un tamaño de: {cola.Count}");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error");
+            throw;
+        }
     }
 
     private static bool ingresarDatos(Queue<string> cola, bool breaker)
