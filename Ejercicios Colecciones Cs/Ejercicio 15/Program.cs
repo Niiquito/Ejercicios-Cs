@@ -26,8 +26,16 @@ public class Ejercicio15
         string palabra;
         do
         {
-            palabra = Console.ReadLine();
-            lista.AddLast(palabra);
+            try
+            {
+                palabra = Console.ReadLine();
+                lista.AddLast(palabra);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error", e);
+                throw;
+            }
         } while (palabra != "");
         return palabra;
     }
