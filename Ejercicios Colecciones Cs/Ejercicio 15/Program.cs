@@ -6,19 +6,27 @@ public class Ejercicio15
         Queue<string> cola = new Queue<string>();
         LinkedList<string> lista = new LinkedList<string>();
         string palabra = "a";
-        palabra = ingresarPalabras(lista);
-        Console.WriteLine();
-        lista.RemoveLast();
-        Console.WriteLine("Mostrar elementos \n");
-        mostrarLista(lista);
-        Console.WriteLine("\nMostrar elementos en cola");
-        ponerElementosEnCola(cola, lista);
-        Console.WriteLine();
-        mostrarCola(cola);
-        Console.WriteLine($"\nPrimer elemento: {cola.Peek()}");
-        Console.WriteLine("\nCola eliminada con Enqueue");
-        quitarElementosDeCola(cola);
-        mostrarCola(cola);
+        try
+        {
+            palabra = ingresarPalabras(lista);
+            Console.WriteLine();
+            lista.RemoveLast();
+            Console.WriteLine("Mostrar elementos \n");
+            mostrarLista(lista);
+            Console.WriteLine("\nMostrar elementos en cola");
+            ponerElementosEnCola(cola, lista);
+            Console.WriteLine();
+            mostrarCola(cola);
+            Console.WriteLine($"\nPrimer elemento: {cola.Peek()}");
+            Console.WriteLine("\nCola eliminada con Enqueue");
+            quitarElementosDeCola(cola);
+            mostrarCola(cola);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error", e);
+            throw;
+        }
     }
 
     private static string ingresarPalabras(LinkedList<string> lista)
