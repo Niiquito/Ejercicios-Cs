@@ -4,11 +4,12 @@ public class Ejercicio14
     static void Main()
     {
         Dictionary<string, int> persona = new Dictionary<string, int>();
-        bool continuar = false;
+        int a = 0;
         do
         {
             try
             {
+                Console.WriteLine("Nombre y Clave, 0 0: Salir");
                 persona.Add(Console.ReadLine(), int.Parse(Console.ReadLine()));
             }
             catch (Exception e)
