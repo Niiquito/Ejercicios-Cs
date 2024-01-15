@@ -15,13 +15,11 @@ public class Ejercicio14
             {
                 Console.WriteLine("Error, ingrese nuevamente", e);
             }
-        } while (!(persona.ContainsKey("") && persona.ContainsValue(0)));
+        } while (!(persona.ContainsKey("0") && persona.ContainsValue(0)));
         Console.WriteLine();
         int cero = 0;
-        persona.Remove<string, int>("", out cero);
+        persona.Remove<string, int>("0", out cero);
         foreach (KeyValuePair<string, int> informacion in persona)
-        {
             Console.WriteLine($"Nombre: {informacion.Key}, Edad: {informacion.Value}");
-        }
     }
 }
