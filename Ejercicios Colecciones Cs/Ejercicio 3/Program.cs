@@ -11,18 +11,13 @@ public class Ejercicio3
     static void Main()
     {
         List<string> nombres = new List<string>();
-        nombres.Add("Alejandro");
-        nombres.Add("Nittao");
-        nombres.Add("Alejo");
-        nombres.Add("Alita");
-        nombres.Add("Nico");
-        nombres.Add("Pedro");
-        nombres.Add("Aedro");
-
-        foreach (string item in nombres)
+        do
         {
+            nombres.Add(Console.ReadLine());
+        } while (!nombres.Contains(""));
+        foreach (string item in nombres)
             Console.WriteLine(item);
-        }
+        nombres.Remove("");
         for (int i = 0; i < nombres.Count; i++)
         {
             if (nombres[i].StartsWith("A"))
@@ -31,12 +26,10 @@ public class Ejercicio3
                 i--;
             }
         }
-        nombres.Add("Pepe");
+        nombres.Add(Console.ReadLine());
         nombres.Sort();
         Console.WriteLine();
         foreach (string item in nombres)
-        {
             Console.WriteLine(item);
-        }
     }
 }
