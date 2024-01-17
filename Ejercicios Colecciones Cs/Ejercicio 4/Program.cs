@@ -12,10 +12,7 @@ public class Ejercicio4
     static void Main()
     {
         List<int> numeros = new List<int>();
-        numeros.Add(1);
-        numeros.Add(2);
-        numeros.Add(3);
-        numeros.Add(4);
+        agregarNumeros(numeros);
         mostrarLista(numeros);
         Console.WriteLine();
         removerPares(numeros);
@@ -50,6 +47,20 @@ public class Ejercicio4
         mostrarLista(numeros);
     }
 
+    private static void agregarNumeros(List<int> numeros)
+    {
+        do
+        {
+            try
+            {
+                numeros.Add(int.Parse(Console.ReadLine()));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error, ingrese nuevamente", e);
+            }
+        } while (!numeros.Contains(0));
+    }
     private static void removerImpares(List<int> numeros)
     {
         for (int i = 0; i < numeros.Count; i++)

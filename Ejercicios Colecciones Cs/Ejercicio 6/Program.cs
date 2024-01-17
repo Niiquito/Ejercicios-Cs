@@ -13,30 +13,42 @@ public class Ejercicio6
     static void Main()
     {
         List<int> numeros = new List<int>();
-        numeros.Add(10);
-        numeros.Add(-1);
-        numeros.Add(20);
-        numeros.Add(-2);
-        numeros.Add(30);
-        foreach (int item in numeros)
-        {
-            Console.WriteLine(item);
-        }
+        agregarNumeros(numeros);
+        numeros.Remove(0);
+        Console.WriteLine();
+        mostrarLista(numeros);
         Console.WriteLine();
         for (int i = 0; i < numeros.Count; i++)
         {
             if (numeros[i] < 0)
-            {
                 numeros.RemoveAt(i);
-            }
         }
         Console.WriteLine();
-        numeros.Add(25);
+        numeros.Add(int.Parse(Console.ReadLine()));
+        Console.WriteLine();
         numeros.Sort();
         numeros.Reverse();
-        foreach (int item in numeros)
+        mostrarLista(numeros);
+    }
+
+    private static void agregarNumeros(List<int> numeros)
+    {
+        do
         {
+            try
+            {
+                numeros.Add(int.Parse(Console.ReadLine()));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error, ingrese nuevamente", e);
+            }
+        } while (!numeros.Contains(0));
+    }
+
+    private static void mostrarLista(List<int> numeros)
+    {
+        foreach (int item in numeros)
             Console.WriteLine(item);
-        }
     }
 }
