@@ -1,7 +1,8 @@
 ﻿namespace Ejercicio5;
 public class Ejercicio5
 {
-    /*Crear una lista de palabras y, a continuación, 
+    /*
+      Crear una lista de palabras y, a continuación, 
       realizar las siguientes operaciones:
             Mostrar la lista en consola.
             Eliminar todas las palabras que sean menores de 5 caracteres.
@@ -11,29 +12,42 @@ public class Ejercicio5
     static void Main()
     {
         List<string> palabras = new List<string>();
-        palabras.Add("Holas");
-        palabras.Add("Petardo");
-        palabras.Add("Piña");
-        string palabra = "";
-        foreach (string item in palabras)
-        {
-            Console.WriteLine(item);
-        }
+        agregarElementos(palabras);
+        Console.WriteLine("Lista de palabras ingresadas");
+        mostrarLista(palabras);
         Console.WriteLine();
-        for (int i = 0; i<palabras.Count; i++)
+        for (int i = 0; i < palabras.Count; i++)
         {
-            palabra = palabras[i];
-            if (palabra.Length < 5)
+            if (palabras[i].Length < 5)
             {
                 palabras.RemoveAt(i);
                 i--;
             }
         }
-        palabras.Add("Cascanueces");
+        Console.Write("Ingrese nueva palabra: ");
+        palabras.Add(Console.ReadLine());
         palabras.Sort();
-        foreach(string item in palabras)
-        {
+        Console.WriteLine();
+        mostrarLista(palabras);
+    }
+
+    private static void mostrarLista(List<string> palabras)
+    {
+        foreach (string item in palabras)
             Console.WriteLine(item);
-        }
+    }
+    private static void agregarElementos(List<string> palabras)
+    {
+        do
+        {
+            try
+            {
+                palabras.Add(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error, ingrese nuevamente", e);
+            }
+        } while (!palabras.Contains(""));
     }
 }

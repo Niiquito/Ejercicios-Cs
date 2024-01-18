@@ -12,16 +12,10 @@ public class Ejercicio7
     {
         List<int> numeros = new List<int>();
         int diferencia = 0, MayorDiferencia = -1;
-        numeros.Add(10);
-        numeros.Add(20);
-        numeros.Add(30);
-        numeros.Add(40);
-        numeros.Add(60);
-        numeros.Add(70);
-        foreach (int item in numeros)
-        {
-            Console.WriteLine(item);
-        }
+        agregarNumeros(numeros);
+        numeros.Remove(0);
+        Console.WriteLine();
+        mostrarElementos(numeros);
         Console.WriteLine();
         for (int i = 0; i < numeros.Count - 1; i++)
         {
@@ -31,6 +25,27 @@ public class Ejercicio7
                 MayorDiferencia = diferencia;
             }
         }
-            Console.WriteLine($"La mayor diferencia es: { MayorDiferencia}");
+        Console.WriteLine($"La mayor diferencia es: { MayorDiferencia}");
+    }
+
+    private static void mostrarElementos(List<int> numeros)
+    {
+        foreach (int item in numeros)
+            Console.WriteLine(item);
+    }
+
+    private static void agregarNumeros(List<int> numeros)
+    {
+        do
+        {
+            try
+            {
+                numeros.Add(int.Parse(Console.ReadLine()));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error, ingrese nuevamente", e);
+            }
+        } while (!numeros.Contains(0));
     }
 }
