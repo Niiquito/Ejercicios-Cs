@@ -11,22 +11,44 @@ public class Ejercicio8
     static void Main()
     {
         List<int> numeros = new List<int>();
-        numeros.Add(10);
-        numeros.Add(10);
-        numeros.Add(30);
-        numeros.Add(20);
-        numeros.Add(30);
-        numeros.Add(40);
-        foreach (int item in numeros)
-            Console.WriteLine(item);
+        agregarNumeros(numeros);
+        Console.WriteLine();
+        numeros.Remove(0);
+        mostrarElementos(numeros);
         numeros.Sort();
         Console.WriteLine();
+        eliminarRepeticiones(numeros);
+        mostrarElementos(numeros);
+    }
+
+    private static void eliminarRepeticiones(List<int> numeros)
+    {
         for (int i = 0; i < numeros.Count - 1; i++)
-            if (numeros[i] == numeros[i+1] )
+            if (numeros[i] == numeros[i + 1])
                 numeros.RemoveAt(i);
+    }
+
+    private static void mostrarElementos(List<int> numeros)
+    {
         foreach (int item in numeros)
             Console.WriteLine(item);
     }
+
+    private static void agregarNumeros(List<int> numeros)
+    {
+        do
+        {
+            try
+            {
+                numeros.Add(int.Parse(Console.ReadLine()));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error, ingrese nuevamente", e);
+            }
+        } while (!numeros.Contains(0));
+    }
+
     /*
      // Eliminar todas las repeticiones de la lista
     FORMA IA:
