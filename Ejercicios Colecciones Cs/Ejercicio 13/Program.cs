@@ -11,11 +11,10 @@ public class Ejercicio13
     {
         LinkedList<string> palabras = new LinkedList<string>();
         Queue<string> cola = new Queue<string>();
-        bool breaker = true;
         try
         {
             Console.WriteLine("Ingrese palabras");
-            breaker = ingresarDatos(cola, breaker);
+            ingresarDatos(cola);
             Console.WriteLine($"El primer elemento es: {cola.Peek()}, la lista tiene un tamaño de: {cola.Count - 1}");
             int tamañoCola = cola.Count;
             eliminarCola(cola, tamañoCola);
@@ -24,25 +23,17 @@ public class Ejercicio13
         catch (Exception e)
         {
             Console.WriteLine("Error");
-            throw;
         }
     }
 
-    private static bool ingresarDatos(Queue<string> cola, bool breaker)
+    private static void ingresarDatos(Queue<string> cola)
     {
         do
         {
             cola.Enqueue(Console.ReadLine());
             cola.ToList();
-            if (cola.Last() != "")
-                Console.WriteLine($"La palabra ingresada es '{cola.Last()}'.\n");
-            else
-            {
-                breaker = false;
-                break;
-            }
-        } while (breaker != false);
-        return breaker;
+            Console.WriteLine($"La palabra ingresada es '{cola.Last()}'.\n");
+        } while (!cola.Contains(""));
     }
 
     private static void eliminarCola(Queue<string> cola, int tamañoCola)
