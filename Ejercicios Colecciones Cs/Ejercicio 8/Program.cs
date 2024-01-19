@@ -11,21 +11,31 @@ public class Ejercicio8
     static void Main()
     {
         List<int> numeros = new List<int>();
-        agregarNumeros(numeros);
-        Console.WriteLine();
-        numeros.Remove(0);
-        mostrarElementos(numeros);
-        numeros.Sort();
-        Console.WriteLine();
-        eliminarRepeticiones(numeros);
-        mostrarElementos(numeros);
+        try
+        {
+            agregarNumeros(numeros);
+            Console.WriteLine();
+            numeros.Remove(0);
+            mostrarElementos(numeros);
+            numeros.Sort();
+            Console.WriteLine();
+            eliminarRepeticiones(numeros);
+            mostrarElementos(numeros);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error, ingrese nuevamente");
+        }
     }
 
     private static void eliminarRepeticiones(List<int> numeros)
     {
         for (int i = 0; i < numeros.Count - 1; i++)
             if (numeros[i] == numeros[i + 1])
+            {
                 numeros.RemoveAt(i);
+                i--;
+            }
     }
 
     private static void mostrarElementos(List<int> numeros)
