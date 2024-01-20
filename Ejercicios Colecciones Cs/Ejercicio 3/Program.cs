@@ -11,24 +11,36 @@ public class Ejercicio3
     static void Main()
     {
         List<string> nombres = new List<string>();
+        agregarElementos(nombres);
+        mostrarElementos(nombres);
+        nombres.Remove("");
+        borrarElementos(nombres);
+        nombres.Add(Console.ReadLine());
+        nombres.Sort();
+        Console.WriteLine();
+        mostrarElementos(nombres);
+    }
+
+    private static void agregarElementos(List<string> nombres)
+    {
         do
         {
             nombres.Add(Console.ReadLine());
         } while (!nombres.Contains(""));
-        foreach (string item in nombres)
-            Console.WriteLine(item);
-        nombres.Remove("");
+    }
+
+    private static void borrarElementos(List<string> nombres)
+    {
         for (int i = 0; i < nombres.Count; i++)
-        {
             if (nombres[i].StartsWith("A"))
             {
                 nombres.RemoveAt(i);
                 i--;
             }
-        }
-        nombres.Add(Console.ReadLine());
-        nombres.Sort();
-        Console.WriteLine();
+    }
+
+    private static void mostrarElementos(List<string> nombres)
+    {
         foreach (string item in nombres)
             Console.WriteLine(item);
     }
