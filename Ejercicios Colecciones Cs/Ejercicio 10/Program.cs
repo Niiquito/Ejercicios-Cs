@@ -14,14 +14,35 @@ public class Ejercicio10
         List<int> numeros = new List<int>();
         List<int> numerosPares = new List<int>();
         List<int> numerosImpares = new List<int>();
-        numeros.Add(10);
-        numeros.Add(20);
-        numeros.Add(15);
-        numeros.Add(50);
-        numeros.Add(33);
-        foreach (int item in numeros)
-            Console.WriteLine(item);
+        agregarElementos(numeros);
+        numeros.Remove(0);
+        mostrarLista(numeros);
         numeros.Sort();
+        obtenerParImpar(numeros, numerosPares, numerosImpares);
+        Console.WriteLine("\n Numeros pares");
+        mostrarLista(numerosPares);
+        Console.WriteLine("\n Numeros impares");
+        mostrarLista(numerosImpares);
+    }
+
+    private static void agregarElementos(List<int> numeros)
+    {
+        try
+        {
+            do
+            {
+                numeros.Add(int.Parse(Console.ReadLine()));
+            } while (!numeros.Contains(0));
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error, ingrese nuevamente");
+        }
+    }
+
+    private static void obtenerParImpar(List<int> numeros, List<int> numerosPares, List<int> numerosImpares)
+    {
         foreach (int item in numeros)
         {
             if (item % 2 == 0)
@@ -29,11 +50,11 @@ public class Ejercicio10
             else
                 numerosImpares.Add(item);
         }
-        Console.WriteLine("\n Numeros pares");
-        foreach (int item in numerosPares)
-            Console.WriteLine(item);
-        Console.WriteLine("\n Numeros impares");
-        foreach (int item in numerosImpares)
+    }
+
+    private static void mostrarLista(List<int> numeros)
+    {
+        foreach (int item in numeros)
             Console.WriteLine(item);
     }
 }
