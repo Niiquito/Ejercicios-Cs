@@ -15,11 +15,8 @@ public class Ejercicio11
     {
         List<int> numeros = new List<int>();
         int mayor = 0, posicion = 0;
-        numeros.Add(10);
-        numeros.Add(20);
-        numeros.Add(60);
-        numeros.Add(40);
-        numeros.Add(50);
+        agregarElementos(numeros);
+        numeros.Remove(0);
         mostrarLista(numeros);
         obtenerMayorConPosicion(numeros, ref mayor, ref posicion);
         Console.WriteLine($"\nEl numero mayor es: {mayor} \n" +
@@ -28,6 +25,14 @@ public class Ejercicio11
         Console.WriteLine("\nLista sin el numero mayor\n");
         mostrarLista(numeros);
     }
+    private static void agregarElementos(List<int> numeros)
+    {
+            do
+            {
+                numeros.Add(int.Parse(Console.ReadLine()));
+            } while (!numeros.Contains(0));
+    }
+
 
     private static void obtenerMayorConPosicion(List<int> numeros, ref int mayor, ref int posicion)
     {
