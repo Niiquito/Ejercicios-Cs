@@ -18,17 +18,20 @@ public class Ejercicio6
         Console.WriteLine();
         mostrarLista(numeros);
         Console.WriteLine();
-        for (int i = 0; i < numeros.Count; i++)
-        {
-            if (numeros[i] < 0)
-                numeros.RemoveAt(i);
-        }
+        eliminarNegativos(numeros);
         Console.WriteLine();
         numeros.Add(int.Parse(Console.ReadLine()));
         Console.WriteLine();
         numeros.Sort();
         numeros.Reverse();
         mostrarLista(numeros);
+    }
+
+    private static void eliminarNegativos(List<int> numeros)
+    {
+        for (int i = 0; i < numeros.Count; i++)
+            if (numeros[i] < 0)
+                numeros.RemoveAt(i);
     }
 
     private static void agregarNumeros(List<int> numeros)

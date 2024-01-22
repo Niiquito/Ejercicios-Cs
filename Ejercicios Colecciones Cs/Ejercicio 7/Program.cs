@@ -17,15 +17,18 @@ public class Ejercicio7
         Console.WriteLine();
         mostrarElementos(numeros);
         Console.WriteLine();
+        encontrarDiferencia(numeros, ref diferencia, ref MayorDiferencia);
+        Console.WriteLine($"La mayor diferencia es: { MayorDiferencia}");
+    }
+
+    private static void encontrarDiferencia(List<int> numeros, ref int diferencia, ref int MayorDiferencia)
+    {
         for (int i = 0; i < numeros.Count - 1; i++)
         {
             diferencia = numeros[i + 1] - numeros[i];
             if (diferencia > MayorDiferencia)
-            {
                 MayorDiferencia = diferencia;
-            }
         }
-        Console.WriteLine($"La mayor diferencia es: { MayorDiferencia}");
     }
 
     private static void mostrarElementos(List<int> numeros)
