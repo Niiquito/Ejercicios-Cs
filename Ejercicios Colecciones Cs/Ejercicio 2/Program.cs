@@ -11,12 +11,14 @@ public class Ejercicio2
     */
     static void Main()
     {
-        List<int> numeros = new List<int>();
-        agregarElementos(numeros);
-        Console.WriteLine();
-        int suma = 0, mayor = 0, menor = 999;
-        mayorMenor(numeros, ref suma, ref mayor, ref menor);
-        Informe(numeros, suma, mayor, menor);
+            List<int> numeros = new List<int>();
+            agregarElementos(numeros);
+            numeros.Remove(0);
+            Console.WriteLine();
+            int suma = 0, mayor = 0, menor = 999;
+            mayorMenor(numeros, ref suma, ref mayor, ref menor);
+            Informe(numeros, suma, mayor, menor);
+
     }
 
     private static void Informe(List<int> numeros, int suma, int mayor, int menor)
@@ -42,7 +44,16 @@ public class Ejercicio2
 
     private static void agregarElementos(List<int> numeros)
     {
-        for (int i = 0; i < 3; i++)
-            numeros.Add(int.Parse(Console.ReadLine()));
+        do
+        {
+            try
+            {
+                numeros.Add(int.Parse(Console.ReadLine()));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Valor incorrecto, ingrese nuevamente", e);
+            }
+        } while (!numeros.Contains(0));
     }
 }
