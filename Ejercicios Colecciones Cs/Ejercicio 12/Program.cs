@@ -15,9 +15,8 @@ public class Ejercicio12
     static void Main()
     {
         LinkedList<int> numeros = new LinkedList<int>();
-        numeros.AddLast(10);
-        numeros.AddLast(20);
-        numeros.AddLast(30);
+        agregarNumeroUltimo(numeros);
+        numeros.Remove(0);
         mostrarLista(numeros);
         numeros.AddFirst(5);
         numeros.AddLast(40);
@@ -28,7 +27,21 @@ public class Ejercicio12
         numeros.RemoveLast();
         mostrarLista(numeros);
     }
-
+    private static void agregarNumeroUltimo(LinkedList<int> numeros)
+    {
+            do
+            {
+                try
+                {
+                    numeros.AddLast(int.Parse(Console.ReadLine()));
+                }
+                catch (Exception e)
+                {
+                Console.WriteLine("Valor incorrecto, ingrese nuevamente", e);
+                }
+            } while (!numeros.Contains(0));
+            Console.WriteLine();
+    }
     private static void mostrarLista(LinkedList<int> numeros)
     {
         foreach (int item in numeros)
