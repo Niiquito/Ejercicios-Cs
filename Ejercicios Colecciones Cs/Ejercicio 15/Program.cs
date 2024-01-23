@@ -5,10 +5,9 @@ public class Ejercicio15
     {
         Queue<string> cola = new Queue<string>();
         LinkedList<string> lista = new LinkedList<string>();
-        string palabra = "a";
         try
         {
-            palabra = ingresarPalabras(lista);
+            ingresarPalabras(lista);
             Console.WriteLine();
             lista.RemoveLast();
             Console.WriteLine("Mostrar elementos \n");
@@ -25,27 +24,22 @@ public class Ejercicio15
         catch (Exception e)
         {
             Console.WriteLine("Error", e);
-            throw;
         }
     }
 
-    private static string ingresarPalabras(LinkedList<string> lista)
+    private static void ingresarPalabras(LinkedList<string> lista)
     {
-        string palabra;
         do
         {
             try
             {
-                palabra = Console.ReadLine();
-                lista.AddLast(palabra);
+                lista.AddLast(Console.ReadLine());
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error", e);
-                throw;
+                Console.WriteLine("Valor incorrecto, ingrese nuevamente", e);
             }
-        } while (palabra != "");
-        return palabra;
+        } while (!lista.Contains(""));
     }
 
     private static void mostrarLista(LinkedList<string> lista)
