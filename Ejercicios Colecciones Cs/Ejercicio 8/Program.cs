@@ -11,8 +11,6 @@ public class Ejercicio8
     static void Main()
     {
         List<int> numeros = new List<int>();
-        try
-        {
             agregarNumeros(numeros);
             Console.WriteLine();
             numeros.Remove(0);
@@ -21,11 +19,6 @@ public class Ejercicio8
             Console.WriteLine();
             eliminarRepeticiones(numeros);
             mostrarElementos(numeros);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("Error, ingrese nuevamente");
-        }
     }
 
     private static void eliminarRepeticiones(List<int> numeros)

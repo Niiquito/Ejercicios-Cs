@@ -12,8 +12,9 @@ public class Ejercicio3
     {
         List<string> nombres = new List<string>();
         agregarElementos(nombres);
-        mostrarElementos(nombres);
         nombres.Remove("");
+        Console.Clear();
+        mostrarElementos(nombres);
         borrarElementos(nombres);
         nombres.Add(Console.ReadLine());
         nombres.Sort();

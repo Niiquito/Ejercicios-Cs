@@ -16,19 +16,22 @@ public class Ejercicio5
         Console.WriteLine("Lista de palabras ingresadas");
         mostrarLista(palabras);
         Console.WriteLine();
-        for (int i = 0; i < palabras.Count; i++)
-        {
-            if (palabras[i].Length < 5)
-            {
-                palabras.RemoveAt(i);
-                i--;
-            }
-        }
+        removerPalabrasMenores(palabras);
         Console.Write("Ingrese nueva palabra: ");
         palabras.Add(Console.ReadLine());
         palabras.Sort();
         Console.WriteLine();
         mostrarLista(palabras);
+    }
+
+    private static void removerPalabrasMenores(List<string> palabras)
+    {
+        for (int i = 0; i < palabras.Count; i++)
+            if (palabras[i].Length < 5)
+            {
+                palabras.RemoveAt(i);
+                i--;
+            }
     }
 
     private static void mostrarLista(List<string> palabras)
