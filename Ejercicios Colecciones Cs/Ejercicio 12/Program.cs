@@ -45,8 +45,6 @@ public class Ejercicio12
     private static void mostrarLista(LinkedList<int> numeros)
     {
         foreach (int item in numeros)
-        {
             Console.WriteLine(item);
-        }
     }
 }
