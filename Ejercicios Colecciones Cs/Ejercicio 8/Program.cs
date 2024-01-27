@@ -13,7 +13,6 @@ public class Ejercicio8
         List<int> numeros = new List<int>();
             agregarNumeros(numeros);
             Console.WriteLine();
-            numeros.Remove(0);
             mostrarElementos(numeros);
             numeros.Sort();
             Console.WriteLine();
@@ -50,6 +49,7 @@ public class Ejercicio8
                 Console.WriteLine("Error, ingrese nuevamente", e);
             }
         } while (!numeros.Contains(0));
+        numeros.Remove(0);
     }
 
     /*

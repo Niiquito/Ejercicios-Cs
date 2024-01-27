@@ -13,7 +13,6 @@ public class Ejercicio7
         List<int> numeros = new List<int>();
         int diferencia = 0, MayorDiferencia = -1;
         agregarNumeros(numeros);
-        numeros.Remove(0);
         Console.WriteLine();
         mostrarElementos(numeros);
         Console.WriteLine();
@@ -50,5 +49,6 @@ public class Ejercicio7
                 Console.WriteLine("Error, ingrese nuevamente", e);
             }
         } while (!numeros.Contains(0));
+        numeros.Remove(0);
     }
 }

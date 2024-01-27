@@ -14,7 +14,6 @@ public class Ejercicio6
     {
         List<int> numeros = new List<int>();
         agregarNumeros(numeros);
-        numeros.Remove(0);
         Console.WriteLine();
         mostrarLista(numeros);
         Console.WriteLine();
@@ -47,6 +46,7 @@ public class Ejercicio6
                 Console.WriteLine("Error, ingrese nuevamente", e);
             }
         } while (!numeros.Contains(0));
+        numeros.Remove(0);
     }
 
     private static void mostrarLista(List<int> numeros)
