@@ -5,6 +5,21 @@ public class Ejercicio14
     {
         Dictionary<string, int> persona = new Dictionary<string, int>();
         int a = 0;
+        agregarElementos(persona);
+        Console.WriteLine();
+        int cero = 0;
+        persona.Remove<string, int>("0", out cero);
+        mostrarElementos(persona);
+    }
+
+    private static void mostrarElementos(Dictionary<string, int> persona)
+    {
+        foreach (KeyValuePair<string, int> informacion in persona)
+            Console.WriteLine($"Nombre: {informacion.Key}, Edad: {informacion.Value}");
+    }
+
+    private static void agregarElementos(Dictionary<string, int> persona)
+    {
         do
         {
             try
@@ -17,10 +32,5 @@ public class Ejercicio14
                 Console.WriteLine("Error, ingrese nuevamente", e);
             }
         } while (!(persona.ContainsKey("0") && persona.ContainsValue(0)));
-        Console.WriteLine();
-        int cero = 0;
-        persona.Remove<string, int>("0", out cero);
-        foreach (KeyValuePair<string, int> informacion in persona)
-            Console.WriteLine($"Nombre: {informacion.Key}, Edad: {informacion.Value}");
     }
 }

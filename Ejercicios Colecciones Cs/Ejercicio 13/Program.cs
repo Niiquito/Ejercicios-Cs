@@ -11,28 +11,28 @@ public class Ejercicio13
     {
         LinkedList<string> palabras = new LinkedList<string>();
         Queue<string> cola = new Queue<string>();
-        try
-        {
-            Console.WriteLine("Ingrese palabras");
-            ingresarDatos(cola);
-            Console.WriteLine($"El primer elemento es: {cola.Peek()}, la lista tiene un tamaño de: {cola.Count - 1}");
-            int tamañoCola = cola.Count;
-            eliminarCola(cola, tamañoCola);
-            Console.WriteLine($"\nLa lista luego del Dequeue tiene un tamaño de: {cola.Count}");
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("Error");
-        }
+        Console.WriteLine("Ingrese palabras");
+        ingresarDatos(cola);
+        Console.WriteLine($"El primer elemento es: {cola.Peek()}, la lista tiene un tamaño de: {cola.Count - 1}");
+        int tamañoCola = cola.Count;
+        eliminarCola(cola, tamañoCola);
+        Console.WriteLine($"\nLa lista luego del Dequeue tiene un tamaño de: {cola.Count}");
     }
 
     private static void ingresarDatos(Queue<string> cola)
     {
         do
         {
-            cola.Enqueue(Console.ReadLine());
-            cola.ToList();
-            Console.WriteLine($"La palabra ingresada es '{cola.Last()}'.\n");
+            try
+            {
+                cola.Enqueue(Console.ReadLine());
+                cola.ToList();
+                Console.WriteLine($"La palabra ingresada es '{cola.Last()}'.\n");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Dato inválido, ingrese nuevamente", e);
+            }
         } while (!cola.Contains(""));
     }
 
