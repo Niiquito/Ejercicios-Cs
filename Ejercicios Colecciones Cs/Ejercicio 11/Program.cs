@@ -29,7 +29,15 @@ public class Ejercicio11
     {
             do
             {
-                numeros.Add(int.Parse(Console.ReadLine()));
+                try
+                {
+                    numeros.Add(int.Parse(Console.ReadLine()));
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Dato inválido, ingrese nuevamente", e);
+                }
             } while (!numeros.Contains(0));
     }
 
