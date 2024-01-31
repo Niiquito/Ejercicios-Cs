@@ -4,7 +4,6 @@ public class Ejercicio14
     static void Main()
     {
         Dictionary<string, int> persona = new Dictionary<string, int>();
-        int a = 0;
         agregarElementos(persona);
         Console.WriteLine();
         int cero = 0;
