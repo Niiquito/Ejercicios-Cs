@@ -19,7 +19,18 @@
         public DateTime BirthDay
         {
             get { return _birthDay;}
-            set { _birthDay = value; }
+            set 
+            {
+                _birthDay = value;
+            }
+        }
+        public int Age
+        {
+            get
+            {
+                int edad = DateTime.Now.Year - BirthDay.Year;
+                return edad;
+            }
         }
     }
 }
