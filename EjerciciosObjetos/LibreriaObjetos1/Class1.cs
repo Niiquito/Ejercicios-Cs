@@ -5,7 +5,6 @@
         private string _name;
         private int _dni;
         private DateTime _birthDay;
-
         public string Name
         {
             get { return _name; }

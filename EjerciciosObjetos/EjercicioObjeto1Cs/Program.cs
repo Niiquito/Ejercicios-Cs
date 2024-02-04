@@ -13,6 +13,7 @@ static class Ejercicio1
         LinkedList<int> numeroCuenta = new LinkedList<int>();
         LinkedList<bool> estadoCuenta = new LinkedList<bool>();
         LinkedList<decimal> monto = new LinkedList<decimal>();
+        LinkedList<string> nacionalidad = new LinkedList<string>();
         Console.WriteLine("Ingrese nombre, DNI y fecha de nacimiento");
         do
         {
@@ -53,6 +54,7 @@ static class Ejercicio1
                 $"Edad: {edad[i]}\n" +
                 $"Numero Cuenta: {numeroCuenta.ElementAt(i)}\n" +
                 $"Estado Cuenta: {estadoCuenta.ElementAt(i)}\n" +
-                $"Balance: {monto.ElementAt(i)}");
+                $"Balance: {monto.ElementAt(i)}\n" +
+                $"Nacionalidad: {nacionalidad.ElementAt(i)}\n");
     }
 }
