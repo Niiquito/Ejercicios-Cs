@@ -1,16 +1,17 @@
-﻿using NewCustomer;
+﻿using EntitiesCs;
 public class Ejercicio2
 {
     static void Main()
     {
-        #region "Variables"
+        #region "Variables Customer"
         LinkedList<string> name = new LinkedList<string>();
         LinkedList<int> dni = new LinkedList<int>();
         LinkedList<DateTime> birthDay = new LinkedList<DateTime>();
         LinkedList<string> nationality = new LinkedList<string>();
         LinkedList<UInt16> age = new LinkedList<UInt16>();
-        Customer persona = new Customer();
+        NewCustomer persona = new NewCustomer();
         #endregion
+        #region "Customer"
         do
         {
             Console.Write("Nombre: ");
@@ -22,7 +23,7 @@ public class Ejercicio2
             }
             else
             {
-                persona = new Customer(nationality, dni, birthDay);
+                persona = new NewCustomer(nationality, dni, birthDay);
                 dni.AddLast(persona.Dni);
                 birthDay.AddLast(persona.BirthDay);
                 nationality.AddLast(persona.Nationality);
@@ -31,9 +32,8 @@ public class Ejercicio2
         } while (persona.Name == "");
         name.RemoveLast();
         Informe(name, dni, birthDay, nationality, age);
-
-    }
-
+        #endregion
+    }   
     private static void Informe(LinkedList<string> nombre, LinkedList<int> Dni, LinkedList<DateTime> BirthDay, LinkedList<string> Nacionalidad, LinkedList<UInt16> Edad)
     {
         for (int i = 0; i < nombre.Count; i++)
