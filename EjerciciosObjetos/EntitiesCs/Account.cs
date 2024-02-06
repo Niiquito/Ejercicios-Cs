@@ -12,6 +12,7 @@
             Number = number;
             _balance = balance;
         }
+        public NewCustomer Customer { get; set; }
         public void Deposit(decimal value)
         {
             addBalance(value);
