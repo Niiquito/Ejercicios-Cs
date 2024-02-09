@@ -12,6 +12,7 @@ namespace Entities
         public DateTime Desde { get; set; }
         public DateTime Hasta { get; set; }
         public decimal PrecioNoche { get; set; }
+        public decimal montoHabitacion;
         public Habitacion()
         {
 
@@ -22,7 +23,7 @@ namespace Entities
             Desde = desde;
             Hasta = hasta;
             PrecioNoche = 100;
-            decimal montoHabitacion = GetMonto();
+            montoHabitacion = GetMonto();
         }
         private int cantidadDias()
         {
