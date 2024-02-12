@@ -16,7 +16,7 @@ namespace Entities
         {
             paquetes = new List<Paquete>();
         }
-        public Venta(Cliente cliente, DateTime fecha)
+        public Venta(Cliente cliente, DateTime fecha) : this()
         {
             this.cliente = cliente;
             Fecha = fecha;
@@ -32,6 +32,13 @@ namespace Entities
         public List<Paquete> GetPaquete()
         {
             return paquetes;
+        }
+        public decimal montoTotal()
+        {
+            decimal montoTotal = 0;
+            foreach (Paquete paquete in paquetes)
+                montoTotal = paquete.montoPaquetes() + montoTotal;
+            return montoTotal;
         }
     }
 }

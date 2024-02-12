@@ -10,10 +10,7 @@ namespace Entities
     {
         public Persona persona;
         public decimal Monto { get; set; }
-        public Ticket()
-        {
 
-        }
         public Ticket(Persona persona, decimal monto)
         {
             this.persona = persona;

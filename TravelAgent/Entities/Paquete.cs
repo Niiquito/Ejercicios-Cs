@@ -5,8 +5,22 @@
         public string Descripcion { get; set; }
         public DateTime FechaInicial { get; set; }
         public DateTime FechaFinal { get; set; }
-        public ushort NumeroDias { get;}
-        public byte NumeroTickets { get;}
+        public ushort NumeroDias
+        {
+            get
+            {
+                ushort numeroDias = Convert.ToUInt16(FechaFinal - FechaInicial);
+                return numeroDias;
+            }
+        }
+        public int NumeroTickets
+        {
+            get
+            {
+                int ticketCount = TicketList.Count;
+                return ticketCount;
+            }
+        }
         List<Ticket> TicketList { get; set; }
         public Paquete()
         {
@@ -29,6 +43,13 @@
         public void RemoveTicket(Ticket ticket)
         {
             TicketList.Remove(ticket);
+        }
+        public decimal montoPaquetes()
+        {
+            decimal montoPaquetes = 0;
+            foreach (Ticket ticket in TicketList)
+                montoPaquetes = ticket.Monto + montoPaquetes;
+            return montoPaquetes;
         }
 
     }
