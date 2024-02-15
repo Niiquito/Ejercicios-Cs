@@ -7,6 +7,16 @@ public class Demo
         mostrarLibro(libro0);
         Empleado empleado0 = new Empleado(12, "Pepe", "Peronio 5126", 376451252);
         mostrarEmpleado(empleado0);
+        Estudiante estudiante0 = new Estudiante(160, "Pato", "M", new DateTime(2022, 12, 12));
+        mostrarEstudiante(estudiante0);
+    }
+
+    private static void mostrarEstudiante(Estudiante estudiante0)
+    {
+        Console.WriteLine($"CI: {estudiante0.CI}\n" +
+                    $"Nombre: {estudiante0.Name}\n" +
+                    $"Sexo: {estudiante0.Gender}\n" +
+                    $"Fecha Nacimiento: {estudiante0.BirthDay.ToShortDateString()}\n");
     }
 
     private static void mostrarLibro(Libro libro)
