@@ -12,16 +12,25 @@ namespace Entities
         public string Name { get; set; }
         public string Address { get; set; }
         public int phoneNumber { get; set; }
+        public decimal Salary { get; set; }
         public Empleado()
         {
 
         }
-        public Empleado(int ci, string name, string address, int phone)
+        public Empleado(int ci, string name, string address, int phone, decimal salary)
         {
             this.Ci = ci;
             this.Name = name;
             this.Address = address;
             this.phoneNumber = phone;
+            this.Salary = salary;
+        }
+        public bool pagaImpuesto()
+        {
+            bool impuesto = false;
+            if (Salary > 3000 )
+                impuesto = true;
+            return impuesto;
         }
     }
 }

@@ -5,8 +5,10 @@ public class Demo
     {
         Libro libro0 = new Libro(0, "Principito", "Pepe", 12);
         mostrarLibro(libro0);
-        Empleado empleado0 = new Empleado(12, "Pepe", "Peronio 5126", 376451252);
+        Empleado empleado0 = new Empleado(115, "Pepe", "Peronio 5126", 376451252, 3000);
         mostrarEmpleado(empleado0);
+        Empleado empleado1 = new Empleado(120, "Pedro", "Peronio 2126", 376451352, 4000);
+        mostrarEmpleado(empleado1);
         Estudiante estudiante0 = new Estudiante(160, "Pato", "M", new DateTime(2022, 12, 12));
         mostrarEstudiante(estudiante0);
     }
@@ -31,6 +33,8 @@ public class Demo
         Console.WriteLine($"CI: {empleado.Ci}\n" +
             $"Nombre: {empleado.Name}\n" +
             $"Dirección: {empleado.Address}\n" +
-            $"Celular: {empleado.phoneNumber}\n");
+            $"Celular: {empleado.phoneNumber}\n" +
+            $"Sueldo: {empleado.Salary}\n" +
+            $"Impuesto: {empleado.pagaImpuesto()}\n");
     }
 }
