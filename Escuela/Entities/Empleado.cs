@@ -17,7 +17,7 @@ namespace Entities
         {
 
         }
-        public Empleado(int ci, string name, string address, int phone, decimal salary)
+        public Empleado(int ci, string name, string address, int phone, decimal salary) : this()
         {
             this.Ci = ci;
             this.Name = name;
