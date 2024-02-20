@@ -8,7 +8,7 @@ namespace Entities
 {
     public class Biblioteca
     {
-        public List<Libro> librosList;
+        private List<Libro> librosList;
         private List<Estudiante> estudiantesList;
         private List<Empleado> empleadoList;
 

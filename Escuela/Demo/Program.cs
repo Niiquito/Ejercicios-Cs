@@ -22,8 +22,14 @@ public class Demo
         #endregion
         #region "Mostrar Datos"
         mostrarLibro(biblioteca);
+        Console.ReadKey();
+        Console.Clear();
         mostrarEstudiante(biblioteca);
+        Console.ReadKey();
+        Console.Clear();
         mostrarEmpleado(biblioteca);
+        Console.ReadKey();
+        Console.Clear();
         #endregion
     }
 
