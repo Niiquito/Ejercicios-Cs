@@ -42,5 +42,13 @@ namespace Entities
         {
             return empleadoList;
         }
+        public int giveBook(Libro libro)
+        {
+            return libro.stock - 1;
+        }
+        public int returnStock(Libro libro)
+        {
+            return libro.stock + 1;
+        }
     }
 }

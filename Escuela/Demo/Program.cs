@@ -5,8 +5,8 @@ public class Demo
     {
         #region "Variables"
         Biblioteca biblioteca = new Biblioteca();
-        Libro libro0 = new Libro(0, "Principito", "Pepe", 12);
-        Libro libro1 = new Libro(1, "Troya", "Troy", 120);
+        Libro libro0 = new Libro(0, "Principito", "Pepe", 12, 20);
+        Libro libro1 = new Libro(1, "Troya", "Troy", 120, 5);
         Empleado empleado0 = new Empleado(115, "Pepe", "Peronio 5126", 376451252, 3000);
         Empleado empleado1 = new Empleado(120, "Pedro", "Peronio 2126", 376451352, 4000);
         Estudiante estudiante0 = new Estudiante(160, "Pato", "M", new DateTime(2022, 12, 12));
@@ -19,6 +19,8 @@ public class Demo
         biblioteca.addLibro(libro1);
         biblioteca.addEstudiante(estudiante0);
         biblioteca.addEstudiante(estudiante1);
+        libro0.stock = biblioteca.giveBook(libro0);
+        libro1.stock = biblioteca.returnStock(libro1);
         #endregion
         #region "Mostrar Datos"
         mostrarLibro(biblioteca);
@@ -44,7 +46,6 @@ public class Demo
                     $"Fecha Nacimiento: {estudiante.BirthDay.ToShortDateString()}\n");
         }
     }
-
     private static void mostrarLibro(Biblioteca biblioteca)
     {
         Console.WriteLine("\nLIBROS\n");
@@ -53,7 +54,8 @@ public class Demo
             Console.WriteLine($"ID: {libro.Id}\n" +
                     $"Nombre: {libro.Title}\n" +
                     $"Autor: {libro.Author}\n" +
-                    $"Páginas: {libro.numPage}\n");
+                    $"Páginas: {libro.numPage}\n" +
+                    $"Stock: {libro.stock}\n");
         }
     }
     private static void mostrarEmpleado(Biblioteca biblioteca)
