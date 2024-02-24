@@ -5,8 +5,8 @@ public class Demo
     {
         #region "Variables"
         Biblioteca biblioteca = new Biblioteca();
-        Libro libro0 = new Libro(0, "Principito", "Pepe", 12, 20);
-        Libro libro1 = new Libro(1, "Troya", "Troy", 120, 5);
+        Libro libro0 = new Libro(0, "Principito", "Pepe", new DateTime(2000, 12, 12), 12, 20);
+        Libro libro1 = new Libro(1, "Troya", "Troy", new DateTime(2005, 5, 5), 120, 5);
         Empleado empleado0 = new Empleado(115, "Pepe", "Peronio 5126", 376451252, 3000);
         Empleado empleado1 = new Empleado(120, "Pedro", "Peronio 2126", 376451352, 4000);
         Estudiante estudiante0 = new Estudiante(160, "Pato", "M", new DateTime(2022, 12, 12));
@@ -54,6 +54,7 @@ public class Demo
             Console.WriteLine($"ID: {libro.Id}\n" +
                     $"Nombre: {libro.Title}\n" +
                     $"Autor: {libro.Author}\n" +
+                    $"Fecha lanzamiento: {libro.date.ToShortDateString()}\n" +
                     $"Páginas: {libro.numPage}\n" +
                     $"Stock: {libro.stock}\n");
         }

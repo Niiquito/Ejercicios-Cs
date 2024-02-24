@@ -7,13 +7,15 @@
         public string Author { get; set; }
         public int numPage { get; set; }
         public int stock { get; set; }
-        public Libro(int id, string title, string authorName, int numPage, int stock)
+        public DateTime date { get; set; }
+        public Libro(int id, string title, string authorName, DateTime date, int numPage, int stock)
         {
             Id = id;
             Title = title;
             Author = authorName;
             this.numPage = numPage;
             this.stock = stock;
+            this.date = date;
         }
         
     }
