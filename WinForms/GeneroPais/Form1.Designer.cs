@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.gb_genre = new System.Windows.Forms.GroupBox();
-            this.gb_country = new System.Windows.Forms.GroupBox();
-            this.btn_accept = new System.Windows.Forms.Button();
-            this.rdbtn_male = new System.Windows.Forms.RadioButton();
             this.rdbtn_female = new System.Windows.Forms.RadioButton();
-            this.rdbtn_country1 = new System.Windows.Forms.RadioButton();
+            this.rdbtn_male = new System.Windows.Forms.RadioButton();
+            this.gb_country = new System.Windows.Forms.GroupBox();
             this.rdbtn_country2 = new System.Windows.Forms.RadioButton();
+            this.rdbtn_country1 = new System.Windows.Forms.RadioButton();
+            this.btn_accept = new System.Windows.Forms.Button();
             this.lbl_result = new System.Windows.Forms.Label();
+            this.rdbtn_country3 = new System.Windows.Forms.RadioButton();
+            this.rdbtn_country4 = new System.Windows.Forms.RadioButton();
             this.gb_genre.SuspendLayout();
             this.gb_country.SuspendLayout();
             this.SuspendLayout();
@@ -51,26 +53,16 @@
             this.gb_genre.TabStop = false;
             this.gb_genre.Text = "Genero";
             // 
-            // gb_country
+            // rdbtn_female
             // 
-            this.gb_country.Controls.Add(this.rdbtn_country2);
-            this.gb_country.Controls.Add(this.rdbtn_country1);
-            this.gb_country.Location = new System.Drawing.Point(381, 63);
-            this.gb_country.Name = "gb_country";
-            this.gb_country.Size = new System.Drawing.Size(200, 100);
-            this.gb_country.TabIndex = 1;
-            this.gb_country.TabStop = false;
-            this.gb_country.Text = "Pais";
-            // 
-            // btn_accept
-            // 
-            this.btn_accept.Location = new System.Drawing.Point(294, 239);
-            this.btn_accept.Name = "btn_accept";
-            this.btn_accept.Size = new System.Drawing.Size(75, 23);
-            this.btn_accept.TabIndex = 2;
-            this.btn_accept.Text = "Aceptar";
-            this.btn_accept.UseVisualStyleBackColor = true;
-            this.btn_accept.Click += new System.EventHandler(this.btn_accept_Click);
+            this.rdbtn_female.AutoSize = true;
+            this.rdbtn_female.Location = new System.Drawing.Point(18, 55);
+            this.rdbtn_female.Name = "rdbtn_female";
+            this.rdbtn_female.Size = new System.Drawing.Size(51, 17);
+            this.rdbtn_female.TabIndex = 1;
+            this.rdbtn_female.TabStop = true;
+            this.rdbtn_female.Text = "Mujer";
+            this.rdbtn_female.UseVisualStyleBackColor = true;
             // 
             // rdbtn_male
             // 
@@ -83,27 +75,18 @@
             this.rdbtn_male.Text = "Hombre";
             this.rdbtn_male.UseVisualStyleBackColor = true;
             // 
-            // rdbtn_female
+            // gb_country
             // 
-            this.rdbtn_female.AutoSize = true;
-            this.rdbtn_female.Location = new System.Drawing.Point(18, 55);
-            this.rdbtn_female.Name = "rdbtn_female";
-            this.rdbtn_female.Size = new System.Drawing.Size(51, 17);
-            this.rdbtn_female.TabIndex = 1;
-            this.rdbtn_female.TabStop = true;
-            this.rdbtn_female.Text = "Mujer";
-            this.rdbtn_female.UseVisualStyleBackColor = true;
-            // 
-            // rdbtn_country1
-            // 
-            this.rdbtn_country1.AutoSize = true;
-            this.rdbtn_country1.Location = new System.Drawing.Point(23, 32);
-            this.rdbtn_country1.Name = "rdbtn_country1";
-            this.rdbtn_country1.Size = new System.Drawing.Size(70, 17);
-            this.rdbtn_country1.TabIndex = 2;
-            this.rdbtn_country1.TabStop = true;
-            this.rdbtn_country1.Text = "Argentina";
-            this.rdbtn_country1.UseVisualStyleBackColor = true;
+            this.gb_country.Controls.Add(this.rdbtn_country4);
+            this.gb_country.Controls.Add(this.rdbtn_country3);
+            this.gb_country.Controls.Add(this.rdbtn_country2);
+            this.gb_country.Controls.Add(this.rdbtn_country1);
+            this.gb_country.Location = new System.Drawing.Point(381, 63);
+            this.gb_country.Name = "gb_country";
+            this.gb_country.Size = new System.Drawing.Size(200, 100);
+            this.gb_country.TabIndex = 1;
+            this.gb_country.TabStop = false;
+            this.gb_country.Text = "Pais";
             // 
             // rdbtn_country2
             // 
@@ -116,6 +99,27 @@
             this.rdbtn_country2.Text = "Brasil";
             this.rdbtn_country2.UseVisualStyleBackColor = true;
             // 
+            // rdbtn_country1
+            // 
+            this.rdbtn_country1.AutoSize = true;
+            this.rdbtn_country1.Location = new System.Drawing.Point(23, 32);
+            this.rdbtn_country1.Name = "rdbtn_country1";
+            this.rdbtn_country1.Size = new System.Drawing.Size(70, 17);
+            this.rdbtn_country1.TabIndex = 2;
+            this.rdbtn_country1.TabStop = true;
+            this.rdbtn_country1.Text = "Argentina";
+            this.rdbtn_country1.UseVisualStyleBackColor = true;
+            // 
+            // btn_accept
+            // 
+            this.btn_accept.Location = new System.Drawing.Point(294, 239);
+            this.btn_accept.Name = "btn_accept";
+            this.btn_accept.Size = new System.Drawing.Size(75, 23);
+            this.btn_accept.TabIndex = 2;
+            this.btn_accept.Text = "Aceptar";
+            this.btn_accept.UseVisualStyleBackColor = true;
+            this.btn_accept.Click += new System.EventHandler(this.btn_accept_Click);
+            // 
             // lbl_result
             // 
             this.lbl_result.AutoSize = true;
@@ -124,6 +128,28 @@
             this.lbl_result.Size = new System.Drawing.Size(35, 13);
             this.lbl_result.TabIndex = 3;
             this.lbl_result.Text = "label1";
+            // 
+            // rdbtn_country3
+            // 
+            this.rdbtn_country3.AutoSize = true;
+            this.rdbtn_country3.Location = new System.Drawing.Point(109, 32);
+            this.rdbtn_country3.Name = "rdbtn_country3";
+            this.rdbtn_country3.Size = new System.Drawing.Size(65, 17);
+            this.rdbtn_country3.TabIndex = 4;
+            this.rdbtn_country3.TabStop = true;
+            this.rdbtn_country3.Text = "Uruguay";
+            this.rdbtn_country3.UseVisualStyleBackColor = true;
+            // 
+            // rdbtn_country4
+            // 
+            this.rdbtn_country4.AutoSize = true;
+            this.rdbtn_country4.Location = new System.Drawing.Point(109, 55);
+            this.rdbtn_country4.Name = "rdbtn_country4";
+            this.rdbtn_country4.Size = new System.Drawing.Size(48, 17);
+            this.rdbtn_country4.TabIndex = 5;
+            this.rdbtn_country4.TabStop = true;
+            this.rdbtn_country4.Text = "Chile";
+            this.rdbtn_country4.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -155,6 +181,8 @@
         private System.Windows.Forms.RadioButton rdbtn_country1;
         private System.Windows.Forms.Button btn_accept;
         private System.Windows.Forms.Label lbl_result;
+        private System.Windows.Forms.RadioButton rdbtn_country4;
+        private System.Windows.Forms.RadioButton rdbtn_country3;
     }
 }
 

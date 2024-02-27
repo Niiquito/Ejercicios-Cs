@@ -23,10 +23,18 @@ namespace GeneroPais
                 lbl_result.Text = "Es hombre, de Argentina";
             else if (rdbtn_male.Checked == true && rdbtn_country2.Checked == true)
                 lbl_result.Text = "Es hombre, de Brasil";
+            else if (rdbtn_male.Checked == true && rdbtn_country3.Checked == true)
+                lbl_result.Text = "Es hombre, de Uruguay";
+            else if (rdbtn_male.Checked == true && rdbtn_country4.Checked == true)
+                lbl_result.Text = "Es hombre, de Chile";
             else if (rdbtn_female.Checked == true && rdbtn_country1.Checked == true)
                 lbl_result.Text = "Es mujer, de Argentina";
             else if (rdbtn_female.Checked == true && rdbtn_country2.Checked == true)
                 lbl_result.Text = "Es mujer, de Brasil";
+            else if (rdbtn_female.Checked == true && rdbtn_country3.Checked == true)
+                lbl_result.Text = "Es mujer, de Uruguay";
+            else if (rdbtn_female.Checked == true && rdbtn_country4.Checked == true)
+                lbl_result.Text = "Es mujer, de Chile";
         }
     }
 }
