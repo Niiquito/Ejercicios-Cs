@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clave", "Clave\Clave.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneroPais", "GeneroPais\GeneroPais.csproj", "{B050E357-E43F-408C-A086-C80E26F64CF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComboBox", "ComboBox\ComboBox.csproj", "{7E9021F9-E968-449E-AE31-6681322EA97D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B050E357-E43F-408C-A086-C80E26F64CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B050E357-E43F-408C-A086-C80E26F64CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B050E357-E43F-408C-A086-C80E26F64CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E9021F9-E968-449E-AE31-6681322EA97D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E9021F9-E968-449E-AE31-6681322EA97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E9021F9-E968-449E-AE31-6681322EA97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E9021F9-E968-449E-AE31-6681322EA97D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
