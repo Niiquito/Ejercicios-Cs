@@ -17,7 +17,7 @@ namespace Entities
             modelBuilder.Entity<titulos>().ToTable("titulo");
             modelBuilder.Entity<Editorial>().ToTable("Editorial");
             modelBuilder.Entity<Cargos>().ToTable("Cargo");
-            modelBuilder.Entity<Almacenes>().ToTable("Almacen Nombre");
+            modelBuilder.Entity<Almacenes>().ToTable("Almacen");
         }
     }
 }
