@@ -54,6 +54,7 @@
             // 
             // dataView
             // 
+            this.dataView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataView.Location = new System.Drawing.Point(0, 0);
@@ -61,7 +62,7 @@
             this.dataView.Name = "dataView";
             this.dataView.ReadOnly = true;
             this.dataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataView.Size = new System.Drawing.Size(401, 242);
+            this.dataView.Size = new System.Drawing.Size(543, 242);
             this.dataView.TabIndex = 2;
             // 
             // btn_modificar
@@ -110,7 +111,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataView);
-            this.splitContainer1.Size = new System.Drawing.Size(401, 371);
+            this.splitContainer1.Size = new System.Drawing.Size(543, 371);
             this.splitContainer1.SplitterDistance = 125;
             this.splitContainer1.TabIndex = 14;
             // 
@@ -128,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 377);
+            this.ClientSize = new System.Drawing.Size(544, 377);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

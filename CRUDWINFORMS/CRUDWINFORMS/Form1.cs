@@ -26,8 +26,8 @@ namespace CRUDWINFORMS
         {
             using (editoEntities db = new editoEntities())
             {
-                var lst = from d in db.Editorial
-                          select d;
+                var lst = from dbo in db.Editorial
+                          select new {ID =dbo.editorialID ,Editorial=dbo.editorialNombre, Ciudad=dbo.ciudad, Estado=dbo.estado, Pais=dbo.pais};
                 dataView.DataSource = lst.ToList();
             }
         }
