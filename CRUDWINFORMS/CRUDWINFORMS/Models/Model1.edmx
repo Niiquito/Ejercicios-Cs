@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="editoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Almacen">
+          <Key>
+            <PropertyRef Name="almacenID" />
+          </Key>
+          <Property Name="almacenID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="almacenNombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="almacenDireccion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ciudad" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="estado" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="codigoPostal" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Autor">
+          <Key>
+            <PropertyRef Name="autorID" />
+          </Key>
+          <Property Name="autorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="autorNombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="autorApellido" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="telefono" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="direccion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ciudad" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="estado" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="codigoPostal" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="contratado" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cargo">
+          <Key>
+            <PropertyRef Name="cargoID" />
+          </Key>
+          <Property Name="cargoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cargoDescripcion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="nivelMinimo" Type="smallint" Nullable="false" />
+          <Property Name="nivelMaximo" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Editorial">
+          <Key>
+            <PropertyRef Name="editorialID" />
+          </Key>
+          <Property Name="editorialID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="editorialNombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ciudad" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="estado" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="pais" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="titulo">
+          <Key>
+            <PropertyRef Name="tituloId" />
+          </Key>
+          <Property Name="tituloId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tituloName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Genero" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="editorialID" Type="int" Nullable="false" />
+          <Property Name="precio" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="adelanto" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="regalias" Type="int" Nullable="false" />
+          <Property Name="ventaAnual" Type="int" Nullable="false" />
+          <Property Name="notas" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="fechaPublicacion" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_titulo_Editorial_editorialID">
+          <End Role="Editorial" Type="Self.Editorial" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="titulo" Type="Self.titulo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Editorial">
+              <PropertyRef Name="editorialID" />
+            </Principal>
+            <Dependent Role="titulo">
+              <PropertyRef Name="editorialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="editoModelStoreContainer">
+          <EntitySet Name="Almacen" EntityType="Self.Almacen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Autor" EntityType="Self.Autor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cargo" EntityType="Self.Cargo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Editorial" EntityType="Self.Editorial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="titulo" EntityType="Self.titulo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_titulo_Editorial_editorialID" Association="Self.FK_titulo_Editorial_editorialID">
+            <End Role="Editorial" EntitySet="Editorial" />
+            <End Role="titulo" EntitySet="titulo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="editoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Almacen">
+          <Key>
+            <PropertyRef Name="almacenID" />
+          </Key>
+          <Property Name="almacenID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="almacenNombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="almacenDireccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ciudad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="estado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="codigoPostal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Autor">
+          <Key>
+            <PropertyRef Name="autorID" />
+          </Key>
+          <Property Name="autorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="autorNombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="autorApellido" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ciudad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="estado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="codigoPostal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="contratado" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cargo">
+          <Key>
+            <PropertyRef Name="cargoID" />
+          </Key>
+          <Property Name="cargoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cargoDescripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nivelMinimo" Type="Int16" Nullable="false" />
+          <Property Name="nivelMaximo" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Editorial">
+          <Key>
+            <PropertyRef Name="editorialID" />
+          </Key>
+          <Property Name="editorialID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="editorialNombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ciudad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="estado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pais" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="titulo" Relationship="Self.FK_titulo_Editorial_editorialID" FromRole="Editorial" ToRole="titulo" />
+        </EntityType>
+        <EntityType Name="titulo">
+          <Key>
+            <PropertyRef Name="tituloId" />
+          </Key>
+          <Property Name="tituloId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tituloName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Genero" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="editorialID" Type="Int32" Nullable="false" />
+          <Property Name="precio" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="adelanto" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="regalias" Type="Int32" Nullable="false" />
+          <Property Name="ventaAnual" Type="Int32" Nullable="false" />
+          <Property Name="notas" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fechaPublicacion" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Editorial" Relationship="Self.FK_titulo_Editorial_editorialID" FromRole="titulo" ToRole="Editorial" />
+        </EntityType>
+        <Association Name="FK_titulo_Editorial_editorialID">
+          <End Role="Editorial" Type="Self.Editorial" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="titulo" Type="Self.titulo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Editorial">
+              <PropertyRef Name="editorialID" />
+            </Principal>
+            <Dependent Role="titulo">
+              <PropertyRef Name="editorialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="editoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Almacen" EntityType="Self.Almacen" />
+          <EntitySet Name="Autor" EntityType="Self.Autor" />
+          <EntitySet Name="Cargo" EntityType="Self.Cargo" />
+          <EntitySet Name="Editorial" EntityType="Self.Editorial" />
+          <EntitySet Name="titulo" EntityType="Self.titulo" />
+          <AssociationSet Name="FK_titulo_Editorial_editorialID" Association="Self.FK_titulo_Editorial_editorialID">
+            <End Role="Editorial" EntitySet="Editorial" />
+            <End Role="titulo" EntitySet="titulo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="editoModelStoreContainer" CdmEntityContainer="editoEntities">
+          <EntitySetMapping Name="Almacen">
+            <EntityTypeMapping TypeName="editoModel.Almacen">
+              <MappingFragment StoreEntitySet="Almacen">
+                <ScalarProperty Name="almacenID" ColumnName="almacenID" />
+                <ScalarProperty Name="almacenNombre" ColumnName="almacenNombre" />
+                <ScalarProperty Name="almacenDireccion" ColumnName="almacenDireccion" />
+                <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Autor">
+            <EntityTypeMapping TypeName="editoModel.Autor">
+              <MappingFragment StoreEntitySet="Autor">
+                <ScalarProperty Name="autorID" ColumnName="autorID" />
+                <ScalarProperty Name="autorNombre" ColumnName="autorNombre" />
+                <ScalarProperty Name="autorApellido" ColumnName="autorApellido" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
+                <ScalarProperty Name="contratado" ColumnName="contratado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cargo">
+            <EntityTypeMapping TypeName="editoModel.Cargo">
+              <MappingFragment StoreEntitySet="Cargo">
+                <ScalarProperty Name="cargoID" ColumnName="cargoID" />
+                <ScalarProperty Name="cargoDescripcion" ColumnName="cargoDescripcion" />
+                <ScalarProperty Name="nivelMinimo" ColumnName="nivelMinimo" />
+                <ScalarProperty Name="nivelMaximo" ColumnName="nivelMaximo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Editorial">
+            <EntityTypeMapping TypeName="editoModel.Editorial">
+              <MappingFragment StoreEntitySet="Editorial">
+                <ScalarProperty Name="editorialID" ColumnName="editorialID" />
+                <ScalarProperty Name="editorialNombre" ColumnName="editorialNombre" />
+                <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="titulo">
+            <EntityTypeMapping TypeName="editoModel.titulo">
+              <MappingFragment StoreEntitySet="titulo">
+                <ScalarProperty Name="tituloId" ColumnName="tituloId" />
+                <ScalarProperty Name="tituloName" ColumnName="tituloName" />
+                <ScalarProperty Name="Genero" ColumnName="Genero" />
+                <ScalarProperty Name="editorialID" ColumnName="editorialID" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="adelanto" ColumnName="adelanto" />
+                <ScalarProperty Name="regalias" ColumnName="regalias" />
+                <ScalarProperty Name="ventaAnual" ColumnName="ventaAnual" />
+                <ScalarProperty Name="notas" ColumnName="notas" />
+                <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
