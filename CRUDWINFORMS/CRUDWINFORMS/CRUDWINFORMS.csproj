@@ -55,11 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="editoriales.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="editoriales.Designer.cs">
+      <DependentUpon>editoriales.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Almacen.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -91,6 +91,24 @@
     <Compile Include="Models\titulo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\datosAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\datosAutor.Designer.cs">
+      <DependentUpon>datosAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\EditorialCompleta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\EditorialCompleta.Designer.cs">
+      <DependentUpon>EditorialCompleta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\tablaAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\tablaAutores.Designer.cs">
+      <DependentUpon>tablaAutores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\tablaEditorial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,8 +117,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="editoriales.resx">
+      <DependentUpon>editoriales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\datosAutor.resx">
+      <DependentUpon>datosAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\EditorialCompleta.resx">
+      <DependentUpon>EditorialCompleta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\tablaAutores.resx">
+      <DependentUpon>tablaAutores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\tablaEditorial.resx">
       <DependentUpon>tablaEditorial.cs</DependentUpon>
@@ -118,6 +145,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="bin\Debug\CRUDWINFORMS.exe.config" />
     <None Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -136,6 +164,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\CRUDWINFORMS.exe" />
+    <Content Include="bin\Debug\CRUDWINFORMS.pdb" />
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -149,6 +183,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

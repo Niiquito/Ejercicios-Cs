@@ -1,6 +1,6 @@
 ﻿namespace CRUDWINFORMS
 {
-    partial class Form1
+    partial class editoriales
     {
         /// <summary>
         /// Required designer variable.
@@ -64,6 +64,7 @@
             this.dataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataView.Size = new System.Drawing.Size(543, 242);
             this.dataView.TabIndex = 2;
+            this.dataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataView_CellContentClick);
             // 
             // btn_modificar
             // 

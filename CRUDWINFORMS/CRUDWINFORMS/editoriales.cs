@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using CRUDWINFORMS.Models;
 namespace CRUDWINFORMS
 {
-    public partial class Form1 : Form
+    public partial class editoriales : Form
     {
-        public Form1()
+        public editoriales()
         {
             InitializeComponent();
         }
@@ -80,6 +80,11 @@ namespace CRUDWINFORMS
                 tablaEditorial.ShowDialog();
                 refrescarTabla();
             }
+        }
+
+        private void dataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

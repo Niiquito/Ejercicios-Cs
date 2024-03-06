@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CRUDWINFORMS.Presentation;
 namespace CRUDWINFORMS
 {
     internal static class Program
@@ -16,7 +16,7 @@ namespace CRUDWINFORMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new EditorialCompleta());
         }
     }
 }
